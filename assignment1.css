@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #fdf6e3, #f9e79f);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+    }
+
+    #menu-toggle:checked+.hamburger+ul {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+section {
+    padding: 40px 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.gallery p {
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* Contact form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+form input,
+form button {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+p {
+    font-family: monospace;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.gallery div {
+    border: 2px solid #ccc;
+    /* light grey border */
+    border-radius: 10px;
+    /* smooth corners */
+    padding: 10px;
+    /* spacing inside */
+    background: #fff;
+    /* keeps cards clean against gradient/bg */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* optional subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery div:hover {
+    transform: translateY(-5px);
+    /* lift effect on hover */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    /* stronger shadow */
+}
